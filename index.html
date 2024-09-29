@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./dist/output.css" rel="stylesheet">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>GetTact</title>
+</head>
+  <body>
+    <div class="w-full">
+      <header class="flex flex-row py-2 items-center justify-between border-2 border-gray-300">
+        <a href="/" class="flex flex-row gap-2 items-center px-6">
+          <span>
+            <i class="fa-regular fa-address-book fa-xl"></i>
+          </span>
+          <h3 class="font-sans font-semibold text-2xl">GetTact</h3>
+        </a>
+        <form id="search-form" method="get">
+          <div >
+            <span>
+              <i></i>
+            </span>
+            <input
+            id="search-input"
+            placeholder="Search"
+            type="text"
+            name="contact-input"
+            class="border-2 border-gray-400 text-md rounded-full p-2 pl-6 2xs:w-48 md:w-64"
+            />
+          </div>
+        </form>
+        <nav>
+          <div id="toggle-sidebar" class="p-5">
+              <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="38.853" height="20" viewBox="0 0 18.853 12">
+                <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-4.5 -8)">
+                  <path id="Path_3" data-name="Path 3" d="M4.5,18H23.353" transform="translate(0 -4)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                  <path id="Path_4" data-name="Path 4" d="M4.5,9H23.353" transform="translate(0)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                  <path id="Path_5" data-name="Path 5" d="M4.5,27H23.353" transform="translate(0 -8)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                </g>
+              </svg>
+            </div>
+          <div id="sidebar" class="fixed flex flex-col gap-8 top-0 right-0 bg-gray-800 text-white pl-6 pr-20 py-8 h-screen">
+            <a href="/" class="flex flex-row gap-2 items-center">
+              <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
+              <h3 class="font-medium text-xl">Contacts</h3>
+            </a>
+            <h3 class="font-medium text-lg">Labels</h3>
+            <ul class="flex flex-col gap-6 pl-2">
+              <li class="flex items-center flex-row gap-2">
+                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                Relatives
+              </li>
+              <li class="flex items-center flex-row gap-2">
+                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                Colleagues
+              </li>
+              <li class="flex items-center flex-row gap-2">
+                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                Office
+              </li>
+              <li class="flex items-center flex-row gap-2">
+                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                Favourites
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="flex flex-row ">
+      <div class="w-full">
+        <main class="p-4 text-md">
+          <div class="bg-slate-300 w-30">
+            <h1 class="font-semibold text-4xl">Contacts</h1>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
