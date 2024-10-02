@@ -10,74 +10,108 @@
 </head>
   <body>
     <div class="w-full">
-      <header class="flex flex-row py-2 items-center justify-between border-2 border-gray-300">
-        <a href="/" class="flex flex-row gap-2 items-center px-6">
-          <span>
-            <i class="fa-regular fa-address-book fa-xl"></i>
-          </span>
-          <h3 class="font-sans font-semibold text-2xl">GetTact</h3>
-        </a>
-        <form id="search-form" method="get">
-          <div >
-            <span>
-              <i></i>
-            </span>
-            <input
-            id="search-input"
-            placeholder="Search"
-            type="text"
-            name="contact-input"
-            class="border-2 border-gray-400 text-md rounded-full p-2 pl-6 2xs:w-48 md:w-64"
-            />
+      <header class="flex items-center border-b-2 border-gray-300">
+        <div class="flex flex-row items-center gap-6 ml-0 md:ml-56 lg:ml-64 p-6 ">
+          <div id="toggle-sidebar" class="md:hidden">
+            <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="38.853" height="20" viewBox="0 0 18.853 12">
+              <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-4.5 -8)">
+                <path id="Path_3" data-name="Path 3" d="M4.5,18H23.353" transform="translate(0 -4)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                <path id="Path_4" data-name="Path 4" d="M4.5,9H23.353" transform="translate(0)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                <path id="Path_5" data-name="Path 5" d="M4.5,27H23.353" transform="translate(0 -8)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+              </g>
+            </svg>
           </div>
-        </form>
-        <nav>
-          <div id="toggle-sidebar" class="p-5">
-              <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="38.853" height="20" viewBox="0 0 18.853 12">
-                <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-4.5 -8)">
-                  <path id="Path_3" data-name="Path 3" d="M4.5,18H23.353" transform="translate(0 -4)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
-                  <path id="Path_4" data-name="Path 4" d="M4.5,9H23.353" transform="translate(0)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
-                  <path id="Path_5" data-name="Path 5" d="M4.5,27H23.353" transform="translate(0 -8)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
-                </g>
-              </svg>
+          <form id="search-form" method="get">
+            <div>
+              <span>
+                <i></i>
+              </span>
+              <input
+              id="search-input"
+              placeholder="Search"
+              type="text"
+              name="contact-input"
+              class="border-2 border-gray-400 text-md rounded-full p-2 pl-6 2xs:w-56 md:w-64"
+              />
             </div>
-          <div id="sidebar" class="fixed flex flex-col gap-8 top-0 right-0 bg-gray-800 text-white pl-6 pr-20 py-8 h-screen">
-            <a href="/" class="flex flex-row gap-2 items-center">
-              <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
-              <h3 class="font-medium text-xl">Contacts</h3>
-            </a>
-            <h3 class="font-medium text-lg">Labels</h3>
-            <ul class="flex flex-col gap-6 pl-2">
-              <li class="flex items-center flex-row gap-2">
-                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                Relatives
-              </li>
-              <li class="flex items-center flex-row gap-2">
-                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                Colleagues
-              </li>
-              <li class="flex items-center flex-row gap-2">
-                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                Office
-              </li>
-              <li class="flex items-center flex-row gap-2">
-                <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                Favourites
-              </li>
-            </ul>
+          </form>
+        </div>
+        <nav id="sidebar" class="flex bg-transparent ">
+          <div id="navbar" class="w-56 top-0 left-0 fixed bg-gray-800 text-white h-screen -translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out md:w-48 lg:w-56 z-30">
+            <div class="py-2 pl-4">
+              <a href="/" class="flex flex-row gap-2 items-center">
+                <span>
+                  <i class="fa-regular fa-address-book fa-xl"></i>
+                </span>
+                <h3 class="font-sans font-semibold text-2xl">GetTact</h3>
+                <!-- <span id="closeButton">
+                  <i class="fa-solid fa-x fa-xl pl-20 flex items-center cursor-pointer" style="color: #ffffff;"></i>
+                </span> -->
+              </a>
+              <div class=" py-8 flex flex-col gap-8 ">
+                <a href="/" id="navList" class="flex flex-row gap-2 items-center">
+                  <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
+                  <h3 class="font-medium text-xl">Contacts</h3>
+                </a>
+                <h3 class="font-medium text-lg">Labels</h3>
+                <ul class="flex flex-col gap-6 pl-2">
+                  <li class="flex items-center flex-row gap-2">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Relatives
+                  </li>
+                  <li class="flex items-center flex-row gap-2">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Colleagues
+                  </li>
+                  <li class="flex items-center flex-row gap-2">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Office
+                  </li>
+                  <li class="flex items-center flex-row gap-2">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Favourites
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </nav>
       </header>
     </div>
-    <div class="flex flex-row ">
+    <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
       <div class="w-full">
-        <main class="p-4 text-md">
-          <div class="bg-slate-300 w-30">
-            <h1 class="font-semibold text-4xl">Contacts</h1>
-          </div>
+        <main>
+          <div class="p-4 bg-slate-100 flex flex-col gap-4 max-w-full">
+            <div class="flex flex-row justify-between items-center b-5">
+              <h1 class="font-semibold text-2xl pl-4 ">Contact Lists</h1>
+              <span>
+                <i class="fa-solid fa-user-plus fa-xl hover:text-gray-500 cursor-pointer active:scale-90"></i>
+              </span>
+            </div>
+            <div id="contactCard" class="flex flex-col md:hidden">
+            </div>
+            <div class="text-l table-auto md:overflow-x-auto md:flex md:flex-col">
+              <table class="min-w-full">
+                <thead class="border-b border-b-gray-500 pb-5 text-lg text-left border-spacing-y-4">
+                  <tr>
+                    <th class="px-6 py-3">First Name</th>
+                    <th class="px-6 py-3">Last Name</th>
+                    <th class="px-6 py-3">Phone Number</th>
+                    <th class="px-6 py-3">Email</th>
+                    <th class="px-6 py-3">Labels</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="contactsBody" class="text-sm">
+                </tbody>
+              </table>
+            </div>
+            </div>
         </main>
       </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script type="module" src="script.js"></script>
+    <script type="module" src="store.js"></script>
   </body>
 </html>
