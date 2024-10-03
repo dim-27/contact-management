@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./dist/output.css" rel="stylesheet">
+  <link href="../dist/output.css" rel="stylesheet">
   <link rel="shortcut icon" href="#" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>GetTact</title>
+  <meta
+      name="description"
+      content="Contact Management System to make finding contacts easier"
+    />
+    <meta name="author" content="Muhammad Dimas Firmanda" />
 </head>
   <body>
     <div class="w-full">
@@ -31,15 +36,15 @@
               placeholder="Search"
               type="text"
               name="contact-input"
-              class="border-2 border-gray-400 text-md rounded-full p-2 pl-6 2xs:w-56 md:w-64"
+              class="border-2 border-gray-400 text-md rounded-2xl p-2 pl-6 2xs:w-56 md:w-64"
               />
             </div>
           </form>
         </div>
-        <nav id="sidebar" class="flex bg-transparent ">
-          <div id="navbar" class="w-56 top-0 left-0 fixed bg-gray-800 text-white h-screen -translate-x-full md:translate-x-0 transition-transform duration-500 ease-in-out md:w-48 lg:w-56 z-30">
+        <nav id="sidebar" class="flex bg-transparent">
+          <div id="navbar" class="w-56 top-0 left-0 fixed bg-gray-800 text-white h-screen -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:w-48 lg:w-56 z-30">
             <div class="py-2 pl-4">
-              <a href="/" class="flex flex-row gap-2 items-center">
+              <a href="../pages/index.html" class="flex flex-row gap-2 items-center">
                 <span>
                   <i class="fa-regular fa-address-book fa-xl"></i>
                 </span>
@@ -49,25 +54,25 @@
                 </span> -->
               </a>
               <div class=" py-8 flex flex-col gap-8 ">
-                <a href="/" id="navList" class="flex flex-row gap-2 items-center">
+                <a href="../pages/index.html" id="navList" class="flex flex-row gap-2 items-center">
                   <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
                   <h3 class="font-medium text-xl">Contacts</h3>
                 </a>
                 <h3 class="font-medium text-lg">Labels</h3>
                 <ul class="flex flex-col gap-6 pl-2">
-                  <li class="flex items-center flex-row gap-2">
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
                     Relatives
                   </li>
-                  <li class="flex items-center flex-row gap-2">
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
                     Colleagues
                   </li>
-                  <li class="flex items-center flex-row gap-2">
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
                     Office
                   </li>
-                  <li class="flex items-center flex-row gap-2">
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
                     Favourites
                   </li>
@@ -79,39 +84,56 @@
       </header>
     </div>
     <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
-      <div class="w-full">
+      <div class="w-full p-5">
         <main>
           <div class="p-4 bg-slate-100 flex flex-col gap-4 max-w-full">
             <div class="flex flex-row justify-between items-center b-5">
-              <h1 class="font-semibold text-2xl pl-4 ">Contact Lists</h1>
-              <span>
-                <i class="fa-solid fa-user-plus fa-xl hover:text-gray-500 cursor-pointer active:scale-90"></i>
-              </span>
+              <h1 class="font-semibold text-2xl">New Contact</h1>
             </div>
-            <div id="contactCard" class="flex flex-col md:hidden">
+            <div class="w-full">
+              <form class="bg-transparent" class="flex flex-col gap-6">
+                <label class="flex pb-2" for="Firstname">
+                 First Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
+                <label class="flex pb-2" for="Lastname">
+                  Last Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
+                <label class="flex pb-2 "for="Phonenumber">
+                  Phone Number
+                </label>
+                 <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
+                 <label class="flex pb-2" for="Email"></label>
+                  Email
+                </label>
+                 <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
+                 <label class="flex pb-2" for="Labels"></label>
+                  Labels
+                </label>
+                <button class="flex flex-row gap-2 pt-4">
+                  <input type="checkbox" name="" id="">
+                  <span>Relatives</span>
+                  <input type="checkbox" name="" id="">
+                  <span>Colleagues</span>
+                  <input type="checkbox" name="" id="">
+                  <span>Office</span>
+                  <input type="checkbox" name="" id="">
+                  <span>Favourites</span>
+                </button>
+              </form>
             </div>
-            <div class="text-l table-auto md:overflow-x-auto md:flex md:flex-col">
-              <table class="min-w-full">
-                <thead class="border-b border-b-gray-500 pb-5 text-lg text-left border-spacing-y-4">
-                  <tr>
-                    <th class="px-6 py-3">First Name</th>
-                    <th class="px-6 py-3">Last Name</th>
-                    <th class="px-6 py-3">Phone Number</th>
-                    <th class="px-6 py-3">Email</th>
-                    <th class="px-6 py-3">Labels</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody id="contactsBody" class="text-sm">
-                </tbody>
-              </table>
+            <div class="flex flex-row gap-4">
+              <button id="button" class="bg-indigo-500 text-white w-20 h-10 rounded-lg">
+                  <h1>Save</h1>
+              </button>
+              <button id="button" class="bg-red-500 text-white w-20 h-10 rounded-lg">
+                <h1>Delete</h1>
             </div>
-            </div>
+          </div>
         </main>
       </div>
     </div>
-    
-    <script type="module" src="script.js"></script>
-    <script type="module" src="store.js"></script>
+    <script type="module" src="../assets/js/navbar.js"></script>
   </body>
 </html>
