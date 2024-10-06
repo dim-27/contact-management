@@ -1,41 +1,42 @@
-import { getContacts, saveContacts } from "./store.js";
+const fetchData = (callback) => {
+  let getInitialContacts = localStorage.getItem('contacts')
 
-const getContactsBody = document.getElementById('contactsBody')
-const getContactCard = document.getElementById('contactCard')
-
-let getInitialContacs = []
-
-/* fetch data to body */
-const fetchData = () => {
-  fetch('../data/data.json')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      getInitialContacs = data
-      saveContacts(getInitialContacs);
-      renderContacts();
-    })
-    .catch((error) => {
-      console.log("fail to fetch data", error);
-    })
+  if(!getInitialContacts) {
+    fetch('../data/data.json')
+      .then(response => response.json())
+      .then(data => {      
+        getInitialContacts = data
+        saveContacts(getInitialContacts);
+        callback(getInitialContacts);
+      })
+      .catch((error) => {
+        console.log("fail to fetch data", error);
+      })
+  } else {
+    getInitialContacts = JSON.parse(getInitialContacts);
+    callback(getInitialContacts);
+  }
 }
 
-const renderContacts = () => {
+const renderContacts = (contacts) => {
   //  fetch data to table container
+  // let savedData = getContacts();
+  
+  const getContactBody = document.getElementById('contactBody')
+  const getContactCard = document.getElementById('contactCard')
 
-  getContactsBody.innerHTML = '';
+  getContactBody.innerHTML = '';
   getContactCard.innerHTML = '';
   
-  let savedData = getContacts();
 
-  savedData.forEach((contact) => {
+  contacts.forEach((contact) => {
     const tr = document.createElement('tr');
     // <td class="" >${contact.firstname +contact.lastname}</td>
     tr.classList.add('p-6');
 
     tr.innerHTML = `
-    <td class="px-6 py-4" >${contact.firstname}</td>
-    <td class="px-6 py-4" >${contact.lastname}</td>
+    <td class="px-6 py-4" >${contact.first_name}</td>
+    <td class="px-6 py-4" >${contact.last_name}</td>
     <td class="px-6 py-4" >${contact.phone}</td>
     <td class="px-6 py-4" >${contact.email}</td>
     <td class="px-6 py-4" >${contact.label}</td>
@@ -46,10 +47,10 @@ const renderContacts = () => {
     </td>
     `;
 
-    getContactsBody.appendChild(tr);
+    getContactBody.appendChild(tr);
   })
 
-  savedData.forEach((contact) => {
+  contacts.forEach((contact) => {
     const div = document.createElement('div');
     
     div.classList.add('p-4');
@@ -63,8 +64,8 @@ const renderContacts = () => {
     div.classList.add('gap-4');
 
     div.innerHTML = `
-      <p><strong>First Name: </strong></p><p>${contact.firstname}</p>
-      <p><strong>Last Name: </strong></p><p>${contact.lastname}</p>
+      <p><strong>First Name: </strong></p><p>${contact.first_name}</p>
+      <p><strong>Last Name: </strong></p><p>${contact.last_name}</p>
       <p><strong>Phone: </strong></p><p>${contact.phone}</p>
       <p><strong>Email: </strong></p><p>${contact.email}</p>
       <p><strong>Labels: </strong></p><p>${contact.label}</p>
@@ -78,7 +79,9 @@ const renderContacts = () => {
   })
 } 
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  fetchData();
+document.addEventListener('DOMContentLoaded', () => {
+  fetchData((contacts) => {
+    renderContacts(contacts)
+  })
 });
+

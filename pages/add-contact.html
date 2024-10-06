@@ -62,7 +62,11 @@
                 <ul class="flex flex-col gap-6 pl-2">
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Relatives
+                    Favourites
+                  </li>
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Friends
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
@@ -70,11 +74,7 @@
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Office
-                  </li>
-                  <li class="flex items-center flex-row gap-2 cursor-pointer">
-                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Favourites
+                    Families
                   </li>
                 </ul>
               </div>
@@ -86,54 +86,73 @@
     <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
       <div class="w-full p-5">
         <main>
-          <div class="p-4 bg-slate-100 flex flex-col gap-4 max-w-full">
+          <div class="p-10 bg-slate-100 flex flex-col gap-4 max-w-full border border-black">
             <div class="flex flex-row justify-between items-center b-5">
               <h1 class="font-semibold text-2xl">New Contact</h1>
             </div>
             <div class="w-full">
-              <form class="bg-transparent" class="flex flex-col gap-6">
-                <label class="flex pb-2" for="Firstname">
-                 First Name
-                </label>
-                <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
-                <label class="flex pb-2" for="Lastname">
-                  Last Name
-                </label>
-                <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
-                <label class="flex pb-2 "for="Phonenumber">
-                  Phone Number
-                </label>
-                 <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
-                 <label class="flex pb-2" for="Email"></label>
-                  Email
-                </label>
-                 <input class="shadow appearance-none border rounded w-full text-gray-800 border-black mb-4 p-2">
-                 <label class="flex pb-2" for="Labels"></label>
-                  Labels
-                </label>
-                <button class="flex flex-row gap-2 pt-4">
-                  <input type="checkbox" name="" id="">
+              <div class="form">
+                <form id="submitNewContact" class="bg-transparent" class="flex flex-row gap-4">
+                  <div class="lg:grid lg:grid-cols-2 gap-8">
+                    <div class="flex flex-col">
+                      <label class="flex pb-2" for="firstname">
+                       First Name
+                      </label>
+                      <input id="contactFirstName" class="hadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                    </div>
+                    <div class="flex flex-col">
+                      <label class="flex pb-2" for="lastname">
+                        Last Name
+                      </label>
+                      <input id="contactLastName" class="hadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                    </div>
+                  </div>
+                  <label class="flex pb-2 "for="phonenumber">
+                    Phone Number
+                  </label>
+                   <input id="contactPhone" class="max-w-64 shadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                   <label class="flex pb-2" for="email">
+                    Email
+                  </label>
+                   <input id="contactEmail" class="max-w-96 shadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                  <label class="flex pb-2" for="labels">
+                    Labels
+                  </label>
+                  <select id="contactLabel" class="flex flex-row gap-4 rounded-lg bg-white border border-gray-700 w-32 h-8 text-center mb-4">
+                    <option value="">Select a label</option>
+                    <option value="Favourites">Favourites</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Colleagues">Colleagues</option>
+                    <option value="Families">Families</option>
+                  </select>
+                  <div class="flex flex-row gap-4 justify-end">
+                    <button id="buttonSubmit" type="submit" class="bg-indigo-500 text-white w-20 h-10 rounded-lg active:scale-90">
+                        <h1>Submit</h1>
+                    </button>
+                    <a id="buttonCancel" href="../pages/index.html"" class="bg-red-500 text-white w-20 h-10 rounded-lg active:scale-90 flex justify-center items-center text-center">
+                      <h1>Cancel</h1>
+                    </a>
+                  </div>
+                </form>
+              </div>
+                <!-- <button class="grid grid-cols-2 pb-2 gap-2 mt-2 text-left max-w-12">
+                  <input type="checkbox" name="relaive">
                   <span>Relatives</span>
-                  <input type="checkbox" name="" id="">
+                  <input type="checkbox" name="colleague">
                   <span>Colleagues</span>
-                  <input type="checkbox" name="" id="">
+                  <input type="checkbox" name="office">
                   <span>Office</span>
-                  <input type="checkbox" name="" id="">
+                  <input type="checkbox" name="favourite">
                   <span>Favourites</span>
                 </button>
-              </form>
-            </div>
-            <div class="flex flex-row gap-4">
-              <button id="button" class="bg-indigo-500 text-white w-20 h-10 rounded-lg">
-                  <h1>Save</h1>
-              </button>
-              <button id="button" class="bg-red-500 text-white w-20 h-10 rounded-lg">
-                <h1>Delete</h1>
+              </form> -->
             </div>
           </div>
         </main>
       </div>
     </div>
-    <script type="module" src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/add.js"></script>
+    <script src="../assets/js/store.js"></script>
   </body>
 </html>

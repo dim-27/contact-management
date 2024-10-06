@@ -9,16 +9,5 @@ const saveContacts = (contacts) => {
 // get data from local storae
 const getContacts = () => {
   const contacts = localStorage.getItem("contacts");
-
-  if(!contacts) {
-    saveContacts([]);
-  }
-
-  try {
-    return JSON.parse(contacts);
-  } catch(error) {
-    console.log("fail to get contacts",error);
-  }
+  return contacts ? JSON.parse(contacts) : [];
 }
-
-export {saveContacts, getContacts};

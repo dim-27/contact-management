@@ -62,7 +62,11 @@
                 <ul class="flex flex-col gap-6 pl-2">
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Relatives
+                    Favourites
+                  </li>
+                  <li class="flex items-center flex-row gap-2 cursor-pointer">
+                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
+                    Friends
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
@@ -70,11 +74,7 @@
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Office
-                  </li>
-                  <li class="flex items-center flex-row gap-2 cursor-pointer">
-                    <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Favourites
+                    Families
                   </li>
                 </ul>
               </div>
@@ -86,10 +86,10 @@
     <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
       <div class="w-full">
         <main>
-          <div class="p-4 bg-slate-100 flex flex-col gap-4 max-w-full">
+          <div class="p-10 bg-slate-100 flex flex-col gap-4 max-w-full border border-black">
             <div class="flex flex-row justify-between items-center b-5">
               <h1 class="font-semibold text-2xl pl-4 ">Contact Lists</h1>
-              <a href="../pages/add-contact.html">
+              <a id="addContact" href="../pages/add-contact.html">
                 <span>
                   <i class="fa-solid fa-user-plus fa-xl hover:text-gray-500 cursor-pointer active:scale-90"></i>
                 </span>
@@ -109,7 +109,7 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody id="contactsBody" class="text-sm">
+                <tbody id="contactBody" class="text-sm">
                 </tbody>
               </table>
             </div>
@@ -117,8 +117,8 @@
         </main>
       </div>
     </div>
-    <script type="module" src="../assets/js/navbar.js"></script>
-    <script type="module" src="../assets/js/script.js"></script>
-    <script type="module" src="../assets/js/store.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/store.js"></script>
   </body>
 </html>
