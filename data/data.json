@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "label": "Friends",
+    "label": "Favourites",
     "first_name": "John",
     "last_name": "Doe",
     "email": "john.doe@example.com",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "label": "Friends",
+    "label": "Favourites",
     "first_name": "Jane",
     "last_name": "Smith",
     "email": "jane.smith@example.com",

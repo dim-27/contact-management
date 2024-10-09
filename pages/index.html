@@ -49,9 +49,6 @@
                   <i class="fa-regular fa-address-book fa-xl"></i>
                 </span>
                 <h3 class="font-sans font-semibold text-2xl">GetTact</h3>
-                <!-- <span id="closeButton">
-                  <i class="fa-solid fa-x fa-xl pl-20 flex items-center cursor-pointer" style="color: #ffffff;"></i>
-                </span> -->
               </a>
               <div class=" py-8 flex flex-col gap-8 ">
                 <a href="../pages/index.html" id="navList" class="flex flex-row gap-2 items-center">
@@ -62,19 +59,19 @@
                 <ul class="flex flex-col gap-6 pl-2">
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Favourites
+                    <a id="filterFavourites" href="#" data-name="favourites">Favourites</a>
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Friends
+                    <a id="filterFriends" href="#" data-name="friends">Friends</a>
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Colleagues
+                    <a id="filterColleagues" href="#" data-name="colleagues">Colleagues</a>
                   </li>
                   <li class="flex items-center flex-row gap-2 cursor-pointer">
                     <i class="fa-solid fa-tag" style="color: #f9fafb;"></i>
-                    Families
+                    <a id="filterFamilies" href="#" data-name="families">Families</a>
                   </li>
                 </ul>
               </div>
@@ -86,7 +83,7 @@
     <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
       <div class="w-full">
         <main>
-          <div class="p-10 bg-slate-100 flex flex-col gap-4 max-w-full border border-black">
+          <div class="2xs:p-2 p-10 bg-slate-100 flex flex-col gap-4 max-w-full border border-black">
             <div class="flex flex-row justify-between items-center b-5">
               <h1 class="font-semibold text-2xl pl-4 ">Contact Lists</h1>
               <a id="addContact" href="../pages/add-contact.html">
@@ -95,7 +92,7 @@
                 </span>
               </a>
             </div>
-            <div id="contactCard" class="grid grid-cols-2 lg:hidden gap-4 border-black rounded-2xl p-4 break-words">
+            <div id="contactCard" class="grid 2xs:grid-rows-1 2xs:gap-4 md:grid-cols-2 lg:hidden md:gap-6 border-black rounded-2xl p-4 break-words">
             </div>
             <div class="text-l table-auto md:overflow-x-auto hidden lg:flex lg:flex-col">
               <table class="min-w-full">

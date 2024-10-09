@@ -1,33 +1,10 @@
-const fetchData = (callback) => {
-  let getInitialContacts = localStorage.getItem('contacts')
-
-  if(!getInitialContacts) {
-    fetch('../data/data.json')
-      .then(response => response.json())
-      .then(data => {      
-        getInitialContacts = data
-        saveContacts(getInitialContacts);
-        callback(getInitialContacts);
-      })
-      .catch((error) => {
-        console.log("fail to fetch data", error);
-      })
-  } else {
-    getInitialContacts = JSON.parse(getInitialContacts);
-    callback(getInitialContacts);
-  }
-}
-
 const renderContacts = (contacts) => {
   //  fetch data to table container
-  // let savedData = getContacts();
-  
   const getContactBody = document.getElementById('contactBody')
   const getContactCard = document.getElementById('contactCard')
 
   getContactBody.innerHTML = '';
   getContactCard.innerHTML = '';
-  
 
   contacts.forEach((contact) => {
     const tr = document.createElement('tr');
@@ -40,13 +17,17 @@ const renderContacts = (contacts) => {
     <td class="px-6 py-4" >${contact.phone}</td>
     <td class="px-6 py-4" >${contact.email}</td>
     <td class="px-6 py-4" >${contact.label}</td>
-    <td class="px-6 py-4" >
-      <span>
-        <i class="fa-regular fa-pen-to-square fa-xl active:scale-90 cursor-pointer"></i>
+    <td class="px-6 py-4 flex flex-row gap-4" >
+      <a href="../pages/edit-contact.html?id=${contact.id}"><strong></strong>
+        <span> 
+          <i class="fa-regular fa-pen-to-square fa-xl active:scale-90 cursor-pointer"></i>
+        </span>
+      </a>
+      <span class="removeContact" onclick=deleteContact(${contact.id})> 
+        <i class="fa-solid fa-xmark fa-2xl active:scale-90 cursor-pointer"></i>
       </span>
     </td>
     `;
-
     getContactBody.appendChild(tr);
   })
 
@@ -69,19 +50,35 @@ const renderContacts = (contacts) => {
       <p><strong>Phone: </strong></p><p>${contact.phone}</p>
       <p><strong>Email: </strong></p><p>${contact.email}</p>
       <p><strong>Labels: </strong></p><p>${contact.label}</p>
-      <p><strong></strong>
+      <p>
+        <a href="../pages/edit-contact.html?id=${contact.id}"><strong></strong>
         <span> 
           <i class="fa-regular fa-pen-to-square fa-xl active:scale-90 cursor-pointer"></i>
         </span>
+        </a>
+        <span class="removeContact" onclick=deleteContact(${contact.id})> 
+          <i class="fa-solid fa-xmark fa-2xl active:scale-90 cursor-pointer"></i>
+        </span>
       </p>
+      
     `
     getContactCard.appendChild(div);
   })
 } 
 
+const deleteContact = (id) => {
+  const contacts = getContacts();
+  
+  const filterContacts = contacts.filter((contact) => contact.id !== id);
+  
+  saveContacts(filterContacts);
+
+  window.location.href = "/pages/index.html"
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchData((contacts) => {
     renderContacts(contacts)
-  })
+  });
 });
 
