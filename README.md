@@ -1,6 +1,11 @@
 # GetTact App
+
+## Live-Preview
+**[Contact Management Website](https://dim-27.github.io/contact-management/)**
+
 ## Summary
 Simple contact management app to manage your contacts
+![ContactManagement_Preview.png](assets/img/contact.png))
 
 ## Design
 The design is inspired by:
@@ -29,7 +34,5 @@ https://charm.budigunawan.com/
 - Implementing CRUD operations to store data
 - Implementing fetching data from data.json
 
-## Live-Preview
-**[Contact Management Website](https://dim-27.github.io/contact-management/)**
 
-![ContactManagement_Preview.png](:/0bb312419fc146ef9ed3339d15f916be)
+
