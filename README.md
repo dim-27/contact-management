@@ -17,6 +17,7 @@ Simple contact management app to manage your contacts
 - DOM
 - TailwindCSS
 - CRUD operation
+- Responsive Web Design
   
 ## What I've Learned
 - How to style website using css Tailwindcss
