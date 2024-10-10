@@ -28,3 +28,8 @@ https://charm.budigunawan.com/
 - How to design multiple version for different devices
 - Implementing CRUD operations to store data
 - Implementing fetching data from data.json
+
+## Live-Preview
+**[Contact Management Website](https://dim-27.github.io/contact-management/)**
+
+![ContactManagement_Preview.png](:/0bb312419fc146ef9ed3339d15f916be)
