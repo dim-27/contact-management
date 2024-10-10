@@ -1,4 +1,11 @@
 const searchBar = document.getElementById('search-input');
+const filterFavourites = document.getElementById('filterFavourites');
+const filterFriends = document.getElementById('filterFriends');
+const filterColleagues = document.getElementById('filterColleagues');
+const filterFamilies = document.getElementById('filterFamilies');
+const filterButton = document.getElementById('filterBtn');
+const allContacts = document.getElementById('allContacts');
+
 
 const renderContacts = (contacts) => {
   //  fetch data to table container
@@ -101,3 +108,75 @@ searchBar.addEventListener("input", (event) => {
   renderContacts(filterContacts);
 })
 
+
+const findFavourites = (event) => {
+  event.preventDefault();
+
+  const contacts = getContacts();
+  const selectFavourites = filterFavourites.getAttribute('data-name');
+
+  const filterData = contacts.filter((contact) => contact.label.toLowerCase() ===  selectFavourites);
+  
+  if (selectFavourites) {
+    renderContacts(filterData);
+  } else {
+    renderContacts(contacts);
+  }
+}
+
+const findFamilies = (event) => {
+  event.preventDefault();
+  
+  const contacts = getContacts();
+  const selectFamilies = filterFamilies.getAttribute('data-name');
+
+  const filterData = contacts.filter((contact) => contact.label.toLowerCase() === selectFamilies);
+
+  if (selectFamilies) {
+    renderContacts(filterData);
+  } else {
+    renderContacts(contacts);
+  }
+}
+
+const findColleagues = (event) => {
+  event.preventDefault();
+
+  const contacts = getContacts();
+  const selectColleagues = filterColleagues.getAttribute("data-name");
+
+  const findData = contacts.filter((contact) => contact.label.toLowerCase() === selectColleagues);
+
+  if (selectColleagues) {
+    renderContacts(findData);
+  } else {
+    renderContacts(contacts)
+  }
+}
+
+const findFriends = (event) => {
+  event.preventDefault();
+
+  const contacts = getContacts();
+  const selectFriends = filterFriends.getAttribute("data-name");
+
+  const findData = contacts.filter((contact) => contact.label.toLowerCase() === selectFriends);
+
+  if (selectFriends) {
+    renderContacts(findData);
+  } else {
+    renderContacts(contacts);
+  }
+}
+
+const findAllContacts = (event) => {
+  event.preventDefault();
+  const contacts = getContacts();
+  renderContacts(contacts);
+}
+
+filterFavourites.addEventListener("click", findFavourites);
+filterFamilies.addEventListener("click", findFamilies);
+filterColleagues.addEventListener("click", findColleagues);
+filterFriends.addEventListener("click", findFriends);
+allContacts.addEventListener("click", findAllContacts);
