@@ -2,6 +2,10 @@
 ## Summary
 Simple contact management app to manage your contacts
 
+## Design
+The design is inspired by:
+https://charm.budigunawan.com/
+
 ## Features
 - User can see all contacts
 - User can add new contacts
