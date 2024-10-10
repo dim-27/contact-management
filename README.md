@@ -3,9 +3,10 @@
 ## Live-Preview
 **[Contact Management Website](https://dim-27.github.io/contact-management/)**
 
+![ContactManagement_Preview.png](assets/img/contact.png))
+
 ## Summary
 Simple contact management app to manage your contacts
-![ContactManagement_Preview.png](assets/img/contact.png))
 
 ## Design
 The design is inspired by:
