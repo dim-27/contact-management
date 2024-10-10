@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <link rel="shortcut icon" href="#" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>GetTact</title>
+  <meta
+      name="description"
+      content="Contact Management System to make finding contacts easier"
+    />
+    <meta name="author" content="Muhammad Dimas Firmanda" />
+</head>
+  <body>
+    <div class="w-full">
+      <header class="flex items-center border-b-2 border-gray-300">
+        <div class="flex flex-row items-center gap-6 ml-0 md:ml-56 lg:ml-64 p-6 ">
+          <div id="toggle-sidebar" class="md:hidden">
+            <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="38.853" height="20" viewBox="0 0 18.853 12">
+              <g id="Icon_feather-menu" data-name="Icon feather-menu" transform="translate(-4.5 -8)">
+                <path id="Path_3" data-name="Path 3" d="M4.5,18H23.353" transform="translate(0 -4)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                <path id="Path_4" data-name="Path 4" d="M4.5,9H23.353" transform="translate(0)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+                <path id="Path_5" data-name="Path 5" d="M4.5,27H23.353" transform="translate(0 -8)" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <nav id="sidebar" class="flex bg-transparent">
+          <div id="navbar" class="w-56 top-0 left-0 fixed bg-gray-800 text-white h-screen -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:w-48 lg:w-56 z-30">
+            <div class="py-2 pl-4">
+              <a href="../pages/index.html" class="flex flex-row gap-2 items-center">
+                <span>
+                  <i class="fa-regular fa-address-book fa-xl"></i>
+                </span>
+                <h3 class="font-sans font-semibold text-2xl">GetTact</h3>
+              </a>
+              <div class=" py-8 flex flex-col gap-8 ">
+                <a href="../pages/index.html" id="navList" class="flex flex-row gap-2 items-center">
+                  <i class="fa-solid fa-person fa-xl" style="color: #ffffff;"></i>
+                  <h3 class="font-medium text-xl">Contacts</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="flex flex-col ml-0 md:ml-56 lg:ml-64 p-6">
+      <div class="w-full p-5">
+        <main>
+          <div class="p-10 bg-slate-100 flex flex-col gap-4 max-w-full border border-black">
+            <div class="flex flex-row justify-between items-center b-5">
+              <h1 class="font-semibold text-2xl">New Contact</h1>
+            </div>
+            <div class="w-full">
+              <div class="form">
+                <form id="submitNewContact" class="bg-transparent" class="flex flex-row gap-4">
+                  <div class="lg:grid lg:grid-cols-2 gap-8">
+                    <div class="flex flex-col">
+                      <label class="flex pb-2" for="firstname">
+                       First Name
+                      </label>
+                      <input id="contactFirstName" class="hadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                    </div>
+                    <div class="flex flex-col">
+                      <label class="flex pb-2" for="lastname">
+                        Last Name
+                      </label>
+                      <input id="contactLastName" class="hadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                    </div>
+                  </div>
+                  <label class="flex pb-2 "for="phonenumber">
+                    Phone Number
+                  </label>
+                   <input id="contactPhone" class="max-w-64 shadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                   <label class="flex pb-2" for="email">
+                    Email
+                  </label>
+                   <input id="contactEmail" class="max-w-96 shadow appearance-none border rounded w-full text-gray-800 border-black p-2 mb-4" required>
+                  <label class="flex pb-2" for="labels">
+                    Labels
+                  </label>
+                  <select id="contactLabel" class="flex flex-row gap-4 rounded-lg bg-white border border-gray-700 w-32 h-8 text-center mb-4">
+                    <option value="">Select a label</option>
+                    <option value="Favourites">Favourites</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Colleagues">Colleagues</option>
+                    <option value="Families">Families</option>
+                  </select>
+                  <div class="flex flex-row gap-4 justify-end">
+                    <button id="buttonSubmit" type="submit" class="bg-indigo-500 text-white w-20 h-10 rounded-lg active:scale-90">
+                        <h1>Submit</h1>
+                    </button>
+                    <a id="buttonCancel" href="../pages/index.html"" class="bg-red-500 text-white w-20 h-10 rounded-lg active:scale-90 flex justify-center items-center text-center">
+                      <h1>Cancel</h1>
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../assets/js/add.js"></script>
+    <script src="../assets/js/store.js"></script>
+  </body>
+</html>
