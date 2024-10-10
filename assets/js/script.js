@@ -75,7 +75,7 @@ const deleteContact = (id) => {
   
   saveContacts(filterContacts);
 
-  window.location.href = "../index.html"
+  window.location.href = "./index.html";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
