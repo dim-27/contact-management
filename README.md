@@ -1,10 +1,8 @@
 # GetTact App
 ## Summary
----
 Simple contact management app to manage your contacts
 
 ## Features
----
 - User can see all contacts
 - User can add new contacts
   - User can add first name, last name, phone, email, and labels
@@ -13,7 +11,6 @@ Simple contact management app to manage your contacts
 - User can search contact using labels or search bar
 
 ## Tech Stack
----
 - HTML
 - CSS
 - Javascript
@@ -22,7 +19,6 @@ Simple contact management app to manage your contacts
 - CRUD operation
   
 ## What I've Learned
----
 - How to style website using css Tailwindcss
 - How to design multiple version for different devices
 - Implementing CRUD operations to store data
