@@ -6,7 +6,6 @@ const filterFriends = document.getElementById('filterFriends');
 const filterColleagues = document.getElementById('filterColleagues');
 const filterFamilies = document.getElementById('filterFamilies');
 const filterButton = document.getElementById('filterBtn');
-const searchBar = document.getElementById('search-form');
 
 
 const openSidebar = () => {
@@ -90,7 +89,3 @@ filterFavourites.addEventListener("click", findFavourites);
 filterFamilies.addEventListener("click", findFamilies);
 filterColleagues.addEventListener("click", findColleagues);
 filterFriends.addEventListener("click", findFriends);
-searchBar.addEventListener("input", () => {
-  const contacts = getContacts();
-    
-})

@@ -1,3 +1,5 @@
+const searchBar = document.getElementById('search-input');
+
 const renderContacts = (contacts) => {
   //  fetch data to table container
   const getContactBody = document.getElementById('contactBody')
@@ -81,4 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
     renderContacts(contacts)
   });
 });
+
+searchBar.addEventListener("input", (event) => {
+  const value =  event.target.value.toLowerCase();
+  const contacts = getContacts();
+
+  const filterContacts = contacts.filter(contact => {
+    return (
+      contact.first_name.toLowerCase().includes(value) || 
+      contact.last_name.toLowerCase().includes(value) ||
+      contact.label.toLowerCase().includes(value) ||
+      contact.email.toLowerCase().includes(value) ||
+      contact.phone.toLowerCase().includes(value)      
+    )
+  }) 
+  
+  renderContacts(filterContacts);
+})
 
