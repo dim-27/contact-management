@@ -20,7 +20,7 @@ const renderContacts = (contacts) => {
     <td class="px-6 py-4" >${contact.email}</td>
     <td class="px-6 py-4" >${contact.label}</td>
     <td class="px-6 py-4 flex flex-row gap-4" >
-      <a href="../pages/edit-contact.html?id=${contact.id}"><strong></strong>
+      <a href="./pages/edit-contact.html?id=${contact.id}"><strong></strong>
         <span> 
           <i class="fa-regular fa-pen-to-square fa-xl active:scale-90 cursor-pointer"></i>
         </span>
@@ -53,7 +53,7 @@ const renderContacts = (contacts) => {
       <p><strong>Email: </strong></p><p>${contact.email}</p>
       <p><strong>Labels: </strong></p><p>${contact.label}</p>
       <p>
-        <a href="../pages/edit-contact.html?id=${contact.id}"><strong></strong>
+        <a href="./pages/edit-contact.html?id=${contact.id}"><strong></strong>
         <span> 
           <i class="fa-regular fa-pen-to-square fa-xl active:scale-90 cursor-pointer"></i>
         </span>
@@ -75,7 +75,7 @@ const deleteContact = (id) => {
   
   saveContacts(filterContacts);
 
-  window.location.href = "/index.html"
+  window.location.href = "../index.html"
 }
 
 document.addEventListener('DOMContentLoaded', () => {
