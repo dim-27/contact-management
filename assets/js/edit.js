@@ -45,7 +45,7 @@ const editContact = (event) => {
     saveContacts(contacts);
   }
 
-  window.location.href = "/pages/index.html"
+  window.location.href = "/index.html"
 }
 
 getContactById();

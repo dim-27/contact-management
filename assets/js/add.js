@@ -32,7 +32,7 @@ const submitContacts = (event) => {
  
   userNewForm.innerHTML = userNewForm.innerHTML;
 
-  window.location.href = "../pages/index.html";
+  window.location.href = "../index.html";
 };
 
 
