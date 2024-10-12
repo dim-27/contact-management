@@ -1,7 +1,7 @@
 # GetTact App
 
 ## Live-Preview
-**[Contact Management Website](https://dim-27.github.io/contact-management/)**
+**[Contact Management Website](https://gettact-dimasfirmanda-v1.vercel.app/)**
 
 ![ContactManagement_Preview.png](assets/img/contact.png)
 
