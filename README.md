@@ -6,7 +6,7 @@
 ![ContactManagement_Preview.png](assets/img/contact.png)
 
 ## Summary
-Simple contact management app to manage your contacts
+Simple contact management called GetTact app to manage your contacts
 
 ## Design
 The design is inspired by:
