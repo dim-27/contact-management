@@ -30,7 +30,7 @@ https://charm.budigunawan.com/
 - Responsive Web Design
   
 ## What I've Learned
-- How to style website using css Tailwindcss
+- How to style website using Tailwindcss
 - How to design multiple version for different devices
 - Implementing CRUD operations to store data
 - Implementing fetching data from data.json
